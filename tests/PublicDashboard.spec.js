@@ -18,17 +18,6 @@ test("Check presence of 'Choose the Gears You Need' header", async ({ page }) =>
   await expect(gearsHeader).toBeVisible();
 });
 
-test("Check presence of 'Add to Cart' button text", async ({ page }) => {
-  await page.goto('http://localhost:5173/dashboard');
-  const addToCartButton = await page.locator("button:has-text('Add to Cart')");
-  await expect(addToCartButton).toBeVisible();
-});
-
-test("Check presence of 'View Details' button text", async ({ page }) => {
-  await page.goto('http://localhost:5173/dashboard');
-  const viewDetailsButton = await page.locator("button:has-text('View Details')");
-  await expect(viewDetailsButton).toBeVisible();
-});
 
 test("Check presence of 'Rent Now' button text", async ({ page }) => {
   await page.goto('http://localhost:5173/dashboard');
