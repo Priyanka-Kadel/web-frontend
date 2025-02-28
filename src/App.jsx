@@ -92,7 +92,7 @@ const PublicNavbar = lazy(() => import("./components/common/customer/PublicNavba
 const AllGears = lazy(() => import("./components/public/AllGears"));
 const About = lazy(() => import("./components/public/About"));
 const Contact = lazy(() => import("./components/public/Contact"));
-const Cart = lazy(() => import("./components/public/Cart")); // ✅ Added Cart Page
+const Cart = lazy(() => import("./components/public/Cart")); // Added Cart Page
 
 const Loader = () => (
   <div className="h-screen flex justify-center items-center text-green-700 text-lg font-semibold">
@@ -101,10 +101,20 @@ const Loader = () => (
 );
 
 function App() {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(localStorage.getItem("isAdmin") === "true");
 
+  // Detect changes in localStorage for real-time admin switch
   useEffect(() => {
-    setIsAdmin(localStorage.getItem("isAdmin") === "true");
+    const handleStorageChange = () => {
+      setIsAdmin(localStorage.getItem("isAdmin") === "true");
+    };
+
+    // Listen for storage changes
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
   }, []);
 
   // 🔹 Public Routes (Accessible by All Users)
@@ -114,7 +124,7 @@ function App() {
     { path: "/register", element: <Suspense fallback={<Loader />}><Register /></Suspense> },
     { path: "/dashboard", element: <Suspense fallback={<Loader />}><PublicDashboard /></Suspense> },
     { path: "/all-gears", element: <Suspense fallback={<Loader />}><AllGears /></Suspense> },
-    { path: "/cart", element: <Suspense fallback={<Loader />}><Cart /></Suspense> },  // ✅ Added Cart Page Route
+    { path: "/cart", element: <Suspense fallback={<Loader />}><Cart /></Suspense> },  // Added Cart Page Route
     { path: "/about", element: <Suspense fallback={<Loader />}><About /></Suspense> },
     { path: "/contact", element: <Suspense fallback={<Loader />}><Contact /></Suspense> },
     { path: "*", element: <div className="text-center text-2xl font-bold text-red-600 mt-20">404: Page Not Found</div> },
@@ -142,7 +152,7 @@ function App() {
   // 🔹 Combine Public & Private Routes Based on Role
   const routes = isAdmin ? privateRoutes : publicRoutes;
 
-  const router = createBrowserRouter(routes);
+  const router = createBrowserRouter([...publicRoutes, ...privateRoutes]);
 
   return <RouterProvider router={router} />;
 }
