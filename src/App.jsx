@@ -57,6 +57,7 @@ function App() {
         { path: "products/view-products", element: isAdmin ? <Suspense fallback={<Loader />}><ViewProduct /></Suspense> : <Navigate to="/login" replace /> },
         { path: "products/add-products", element: isAdmin ? <Suspense fallback={<Loader />}><AddProduct /></Suspense> : <Navigate to="/login" replace /> },
         { path: "users", element: isAdmin ? <Suspense fallback={<Loader />}><Users /></Suspense> : <Navigate to="/login" replace /> },
+        // { path: "/cart", element: <Suspense fallback={<Loader />}><CartPage /></Suspense> },
         { path: "products/edit-products/:productId", element: isAdmin ? <Suspense fallback={<Loader />}><EditProduct /></Suspense> : <Navigate to="/login" replace /> },
       ],
     },
