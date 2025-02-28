@@ -142,7 +142,6 @@
 // export default PublicDashboard;
 
 
-
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -151,6 +150,7 @@ import PublicNavbar from "../common/customer/PublicNavbar";
 const PublicDashboard = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
+  const [notification, setNotification] = useState(null);
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -168,21 +168,25 @@ const PublicDashboard = () => {
     const updatedCart = [...existingCart, product];
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     setCartItems(updatedCart);
+
+    // Show notification
+    setNotification(`${product.name} added to cart!`);
+    setTimeout(() => setNotification(null), 3000);
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <PublicNavbar />
-      
-      <section className="relative bg-[#00693e] text-white py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between">
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <motion.h1 className="text-6xl font-extrabold leading-tight">Experience the Gears Like Never Before</motion.h1>
-          <p className="mt-4 text-xl opacity-90 max-w-3xl">Rent premium camping and trekking gear for your next adventure.</p>
-          <motion.button className="mt-6 bg-[#D3D3D3] text-[#00693e] py-4 px-10 rounded-lg font-semibold text-lg" onClick={() => navigate("/all-gears")} whileHover={{ scale: 1.1 }}>
-            View All Gears
-          </motion.button>
-        </div>
-      </section>
+
+      {/* Notification */}
+      {notification && (
+        <motion.div className="fixed top-5 right-5 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+          animate={{ y: [0, -20, 0] }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          {notification}
+        </motion.div>
+      )}
 
       <section className="py-16 px-6 md:px-20">
         <h2 className="text-3xl font-extrabold mb-8 text-[#00693e] text-center">Choose the Gears You Need</h2>

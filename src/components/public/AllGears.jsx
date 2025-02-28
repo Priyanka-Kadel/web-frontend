@@ -112,7 +112,6 @@
 // export default AllGears;
 
 
-
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import PublicNavbar from "../common/customer/PublicNavbar";
@@ -120,6 +119,7 @@ import PublicNavbar from "../common/customer/PublicNavbar";
 const AllGears = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Gears");
   const [cartItems, setCartItems] = useState([]);
+  const [notification, setNotification] = useState(null);
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -129,12 +129,12 @@ const AllGears = () => {
   const categories = ["All Gears", "Camping", "Trekking", "Outdoor"];
 
   const products = [
-    { id: 1, name: "6 X 4 Camping Tent", price: "Rs 500/day", image: "/images/tent.png", category: "Camping", features: ["Waterproof material", "Spacious for 4 people", "Easy setup"] },
-    { id: 2, name: "Eco Friendly Stove", price: "Rs 350/day", image: "/images/stove.png", category: "Outdoor", features: ["Compact", "Eco-friendly", "Stainless steel body"] },
-    { id: 3, name: "Trekking Backpack", price: "Rs 300/day", image: "/images/backpack.png", category: "Trekking", features: ["Adjustable straps", "Multiple compartments", "Breathable back panel"] },
-    { id: 4, name: "Portable Silverware", price: "Rs 250/day", image: "/images/silverware.png", category: "Outdoor", features: ["Compact", "Durable", "Stainless steel"] },
-    { id: 5, name: "Portable Gas Stove", price: "Rs 300/day", image: "/images/gasstove.png", category: "Camping", features: ["Portable", "Perfect for hiking", "Built-in ignition system"] },
-    { id: 6, name: "Trekking Bag", price: "Rs 300/day", image: "/images/trekbag.png", category: "Trekking", features: ["Durable fabric", "Water-resistant", "Designed for long treks"] },
+    { id: 1, name: "6 X 4 Camping Tent", price: "Rs 500/day", image: "/images/tent.png", category: "Camping" },
+    { id: 2, name: "Eco Friendly Stove", price: "Rs 350/day", image: "/images/stove.png", category: "Outdoor" },
+    { id: 3, name: "Trekking Backpack", price: "Rs 300/day", image: "/images/backpack.png", category: "Trekking" },
+    { id: 4, name: "Portable Silverware", price: "Rs 250/day", image: "/images/silverware.png", category: "Outdoor" },
+    { id: 5, name: "Portable Gas Stove", price: "Rs 300/day", image: "/images/gasstove.png", category: "Camping" },
+    { id: 6, name: "Trekking Bag", price: "Rs 300/day", image: "/images/trekbag.png", category: "Trekking" },
   ];
 
   const filteredProducts = selectedCategory === "All Gears"
@@ -146,19 +146,25 @@ const AllGears = () => {
     const updatedCart = [...existingCart, product];
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     setCartItems(updatedCart);
+
+    // Show notification
+    setNotification(`${product.name} added to cart!`);
+    setTimeout(() => setNotification(null), 3000);
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <PublicNavbar />
 
-      {/* Hero Section */}
-      <section className="relative bg-[#00693e] text-white py-16 px-6 md:px-20 flex flex-col items-center">
-        <motion.h1 className="text-6xl font-extrabold leading-tight">Explore All Gears</motion.h1>
-        <p className="mt-4 text-xl opacity-90 text-center max-w-3xl">
-          Choose from a wide range of premium camping, trekking, and outdoor gear.
-        </p>
-      </section>
+      {/* Notification */}
+      {notification && (
+        <motion.div className="fixed top-5 right-5 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+          animate={{ y: [0, -20, 0] }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          {notification}
+        </motion.div>
+      )}
 
       {/* Category Filter */}
       <section className="py-8 px-6 md:px-20">
@@ -166,7 +172,7 @@ const AllGears = () => {
           {categories.map((category) => (
             <motion.button
               key={category}
-              className={`text-lg font-semibold px-4 py-2 rounded-lg ${selectedCategory === category ? "bg-[#00693e] text-white" : "bg-[#D3D3D3] text-[#00693e]"}`}
+              className={`text-lg font-semibold px-4 py-2 rounded-lg transition ${selectedCategory === category ? "bg-[#00693e] text-white" : "bg-[#D3D3D3] text-[#00693e]"}`}
               onClick={() => setSelectedCategory(category)}
               whileHover={{ scale: 1.05 }}
             >
