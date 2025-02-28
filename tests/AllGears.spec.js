@@ -21,10 +21,9 @@ import { expect, test } from "@playwright/test";
     await expect(gearItem.first()).toBeVisible();
   });
 
-
-  test("Check presence of 'GoGear' header (navigation)", async ({ page }) => {
-    const goGearHeader = await page.locator("h1:has-text('GoGear')");
-    await expect(goGearHeader).toBeVisible();
+  test("Check presence of 'Add to Cart' button on gear items", async ({ page }) => {
+    const addToCartButton = await page.locator("button:has-text('Add to Cart')");
+    await expect(addToCartButton.first()).toBeVisible();
   });
 
   test("Check presence of footer section", async ({ page }) => {
