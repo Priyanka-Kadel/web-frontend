@@ -147,11 +147,11 @@
 // export default PublicNavbar;
 
 
-
-
-import React, { useEffect, useState } from 'react';
-import { FiShoppingCart, FiUser } from 'react-icons/fi';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { FiMenu, FiShoppingCart, FiUser, FiX } from "react-icons/fi";
+import { Link, useLocation } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const PublicNavbar = () => {
   const location = useLocation();
@@ -160,18 +160,23 @@ const PublicNavbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
-  // Load cart from localStorage when the component mounts
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
   }, []);
 
-  // Function to remove an item from the cart
   const removeFromCart = (itemId) => {
-    const updatedCart = cartItems.filter(item => item.id !== itemId);
+    const updatedCart = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Save to localStorage
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
+
+  const navLinks = [
+    { to: "/dashboard", label: "Home" },
+    { to: "/all-gears", label: "All Gears" },
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Contact" },
+  ];
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-10">
@@ -182,19 +187,18 @@ const PublicNavbar = () => {
         </Link>
 
         {/* Navigation Links */}
-        <div className="flex justify-center space-x-6 w-full">
-          <Link to="/dashboard" className={`text-gray-700 ${location.pathname === "/dashboard" ? "font-bold text-blue-600" : ""}`}>
-            Home
-          </Link>
-          <Link to="/all-gears" className={`text-gray-700 ${location.pathname === "/all-gears" ? "font-bold text-blue-600" : ""}`}>
-            All Gears
-          </Link>
-          <Link to="/about" className={`text-gray-700 ${location.pathname === "/about" ? "font-bold text-blue-600" : ""}`}>
-            About
-          </Link>
-          <Link to="/contact" className={`text-gray-700 ${location.pathname === "/contact" ? "font-bold text-blue-600" : ""}`}>
-            Contact
-          </Link>
+        <div className="hidden md:flex justify-center space-x-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`text-gray-700 hover:text-blue-600 transition ${
+                location.pathname === link.to ? "font-bold text-blue-600" : ""
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
         {/* Cart Icon */}
@@ -208,27 +212,27 @@ const PublicNavbar = () => {
 
           {/* Cart Dropdown */}
           {cartOpen && (
-            <div className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-lg border-2 border-blue-500 p-2 transition duration-200 ease-in-out">
+            <div className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-lg border-2 border-blue-500 p-2">
               {cartItems.length > 0 ? (
-                cartItems.map((item) => (
-                  <div key={item.id} className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-100">
-                    <img src={item.imageUrl} alt={item.name} className="w-12 h-12 object-cover rounded" />
-                    <div className="ml-2 flex-1">
-                      <span className="block font-semibold">{item.name}</span>
-                      <span className="block text-sm text-gray-500">{item.price}</span>
+                <>
+                  {cartItems.map((item) => (
+                    <div key={item.id} className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      <img src={item.image} alt={item.name} className="w-12 h-12 object-cover rounded" />
+                      <div className="ml-2 flex-1">
+                        <span className="block font-semibold">{item.name}</span>
+                        <span className="block text-sm text-gray-500">{item.price}</span>
+                      </div>
+                      <button onClick={() => removeFromCart(item.id)} className="text-red-500 hover:text-red-700">
+                        ✕
+                      </button>
                     </div>
-                    <button onClick={() => removeFromCart(item.id)} className="text-red-500 hover:text-red-700">
-                      ✕
-                    </button>
-                  </div>
-                ))
+                  ))}
+                  <Link to="/cart" className="block px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 transition text-center rounded">
+                    View Cart
+                  </Link>
+                </>
               ) : (
                 <div className="px-4 py-2 text-gray-700">Your cart is empty</div>
-              )}
-              {cartItems.length > 0 && (
-                <Link to="/cart" className="block px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 transition">
-                  View Cart
-                </Link>
               )}
             </div>
           )}
@@ -240,7 +244,30 @@ const PublicNavbar = () => {
             <FiUser size={24} />
           </button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      )}
+
+      <ToastContainer position="top-right" autoClose={1500} />
     </nav>
   );
 };
