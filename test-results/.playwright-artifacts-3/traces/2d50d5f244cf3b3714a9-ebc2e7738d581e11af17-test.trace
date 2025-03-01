@@ -1,0 +1,23 @@
+{"version":7,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"win32","wallTime":1740813300897,"monotonicTime":4483.818,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","startTime":4485.493,"class":"Test","method":"hook","apiName":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@2","parentId":"hook@1","startTime":4490.819,"class":"Test","method":"fixture","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@3","parentId":"fixture@2","startTime":4493.409,"class":"Test","method":"pw:api","apiName":"browser.newContext","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","viewport":"Object","serviceWorkers":"allow","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","recordHar":"undefined","reducedMotion":"undefined","forcedColors":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@3","endTime":4499.327,"attachments":[]}
+{"type":"after","callId":"fixture@2","endTime":4506.784,"attachments":[]}
+{"type":"before","callId":"fixture@4","parentId":"hook@1","startTime":4508.131,"class":"Test","method":"fixture","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@5","parentId":"fixture@4","startTime":4511.248,"class":"Test","method":"pw:api","apiName":"browserContext.newPage","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@5","endTime":4589.84,"attachments":[]}
+{"type":"after","callId":"fixture@4","endTime":4590.083,"attachments":[]}
+{"type":"after","callId":"hook@1","endTime":4590.531,"attachments":[]}
+{"type":"before","callId":"pw:api@6","startTime":4594.102,"class":"Test","method":"pw:api","apiName":"page.goto","params":{"url":"http://localhost:5173/register","waitUntil":"load"},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\Register.spec.js","line":9,"column":14}]}
+{"type":"after","callId":"pw:api@6","endTime":5067.105,"attachments":[]}
+{"type":"before","callId":"expect@7","startTime":5069.863,"class":"Test","method":"expect","apiName":"expect.toBeVisible","params":{},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\Register.spec.js","line":10,"column":64}]}
+{"type":"after","callId":"expect@7","endTime":5112.143,"attachments":[]}
+{"type":"before","callId":"hook@8","startTime":5112.69,"class":"Test","method":"hook","apiName":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@9","parentId":"hook@8","startTime":5113.519,"class":"Test","method":"fixture","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"after","callId":"fixture@9","endTime":5113.705,"attachments":[]}
+{"type":"before","callId":"fixture@10","parentId":"hook@8","startTime":5114.443,"class":"Test","method":"fixture","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"after","callId":"fixture@10","endTime":5114.626,"attachments":[]}
+{"type":"after","callId":"hook@8","endTime":5356.143,"attachments":[]}
+{"type":"before","callId":"attach@11","startTime":5661.095,"class":"Test","method":"attach","apiName":"attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@11","endTime":5661.28,"attachments":[]}

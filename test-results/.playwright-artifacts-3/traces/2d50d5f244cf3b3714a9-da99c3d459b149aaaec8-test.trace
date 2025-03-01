@@ -1,0 +1,27 @@
+{"version":7,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"win32","wallTime":1740813298710,"monotonicTime":2297.301,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","startTime":2306.068,"class":"Test","method":"hook","apiName":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@2","parentId":"hook@1","startTime":2327.687,"class":"Test","method":"fixture","apiName":"fixture: browser","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@3","parentId":"fixture@2","startTime":2335.892,"class":"Test","method":"pw:api","apiName":"browserType.launch","params":{"handleSIGINT":"false","headless":"true","tracesDir":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\test-results\\.playwright-artifacts-3\\traces","ignoreDefaultArgs":"undefined","ignoreAllDefaultArgs":"false","env":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@3","endTime":2514.449,"attachments":[]}
+{"type":"after","callId":"fixture@2","endTime":2515.042,"attachments":[]}
+{"type":"before","callId":"fixture@4","parentId":"hook@1","startTime":2517.076,"class":"Test","method":"fixture","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@5","parentId":"fixture@4","startTime":2521.884,"class":"Test","method":"pw:api","apiName":"browser.newContext","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","viewport":"Object","serviceWorkers":"allow","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","recordHar":"undefined","reducedMotion":"undefined","forcedColors":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@5","endTime":2540.531,"attachments":[]}
+{"type":"after","callId":"fixture@4","endTime":2565.348,"attachments":[]}
+{"type":"before","callId":"fixture@6","parentId":"hook@1","startTime":2566.835,"class":"Test","method":"fixture","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@7","parentId":"fixture@6","startTime":2570.6130000000003,"class":"Test","method":"pw:api","apiName":"browserContext.newPage","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@7","endTime":2688.0879999999997,"attachments":[]}
+{"type":"after","callId":"fixture@6","endTime":2688.703,"attachments":[]}
+{"type":"after","callId":"hook@1","endTime":2688.861,"attachments":[]}
+{"type":"before","callId":"pw:api@8","startTime":2696.404,"class":"Test","method":"pw:api","apiName":"page.goto","params":{"url":"http://localhost:5173/register","waitUntil":"load"},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\Register.spec.js","line":4,"column":14}]}
+{"type":"after","callId":"pw:api@8","endTime":3849.136,"attachments":[]}
+{"type":"before","callId":"expect@9","startTime":3856.001,"class":"Test","method":"expect","apiName":"expect.toBeVisible","params":{},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\Register.spec.js","line":5,"column":50}]}
+{"type":"after","callId":"expect@9","endTime":3910.584,"attachments":[]}
+{"type":"before","callId":"hook@10","startTime":3911.619,"class":"Test","method":"hook","apiName":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@11","parentId":"hook@10","startTime":3913.3559999999998,"class":"Test","method":"fixture","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"after","callId":"fixture@11","endTime":3913.672,"attachments":[]}
+{"type":"before","callId":"fixture@12","parentId":"hook@10","startTime":3914.261,"class":"Test","method":"fixture","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"after","callId":"fixture@12","endTime":3914.395,"attachments":[]}
+{"type":"after","callId":"hook@10","endTime":4212.282,"attachments":[]}
+{"type":"before","callId":"attach@13","startTime":4482.656,"class":"Test","method":"attach","apiName":"attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@13","endTime":4482.861,"attachments":[]}
