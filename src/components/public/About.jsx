@@ -29,7 +29,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative bg-[#00693e] text-white py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between">
         <div className="w-full md:w-1/2 text-center md:text-left">
-          <h1 className="text-5xl font-extrabold leading-tight">
+          <h1 className="text-2xl font-extrabold leading-tight">
             Your Adventure Starts Here
           </h1>
           <p className="mt-4 text-xl opacity-90 max-w-3xl">
