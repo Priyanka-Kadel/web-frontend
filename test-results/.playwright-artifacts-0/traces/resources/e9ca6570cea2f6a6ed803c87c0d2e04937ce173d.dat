@@ -1,0 +1,24 @@
+import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=6eec5e1e"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import { QueryClient, QueryClientProvider } from "/node_modules/.vite/deps/@tanstack_react-query.js?v=6eec5e1e";
+import __vite__cjsImport2_react from "/node_modules/.vite/deps/react.js?v=6eec5e1e"; const StrictMode = __vite__cjsImport2_react["StrictMode"];
+import __vite__cjsImport3_reactDom_client from "/node_modules/.vite/deps/react-dom_client.js?v=6eec5e1e"; const createRoot = __vite__cjsImport3_reactDom_client["createRoot"];
+import App from "/src/App.jsx";
+import "/src/index.css";
+const queryClient = new QueryClient();
+createRoot(document.getElementById("root")).render(
+  /* @__PURE__ */ jsxDEV(StrictMode, { children: /* @__PURE__ */ jsxDEV(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxDEV(App, {}, void 0, false, {
+    fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/main.jsx",
+    lineNumber: 12,
+    columnNumber: 5
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/main.jsx",
+    lineNumber: 11,
+    columnNumber: 5
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/main.jsx",
+    lineNumber: 10,
+    columnNumber: 3
+  }, this)
+);
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBV0k7QUFYSixTQUFTQSxhQUFhQywyQkFBMkI7QUFDakQsU0FBU0Msa0JBQWtCO0FBQzNCLFNBQVNDLGtCQUFrQjtBQUMzQixPQUFPQyxTQUFTO0FBQ2hCLE9BQU87QUFHUCxNQUFNQyxjQUFZLElBQUlMLFlBQVk7QUFDbENHLFdBQVdHLFNBQVNDLGVBQWUsTUFBTSxDQUFDLEVBQUVDO0FBQUFBLEVBQzFDLHVCQUFDLGNBQ0MsaUNBQUMsdUJBQW9CLFFBQVFILGFBQzdCLGlDQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQUFJLEtBREo7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQUVBLEtBSEY7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQUlBO0FBQ0YiLCJuYW1lcyI6WyJRdWVyeUNsaWVudCIsIlF1ZXJ5Q2xpZW50UHJvdmlkZXIiLCJTdHJpY3RNb2RlIiwiY3JlYXRlUm9vdCIsIkFwcCIsInF1ZXJ5Q2xpZW50IiwiZG9jdW1lbnQiLCJnZXRFbGVtZW50QnlJZCIsInJlbmRlciJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJtYWluLmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBRdWVyeUNsaWVudCwgUXVlcnlDbGllbnRQcm92aWRlciB9IGZyb20gJ0B0YW5zdGFjay9yZWFjdC1xdWVyeSdcbmltcG9ydCB7IFN0cmljdE1vZGUgfSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IGNyZWF0ZVJvb3QgfSBmcm9tICdyZWFjdC1kb20vY2xpZW50J1xuaW1wb3J0IEFwcCBmcm9tICcuL0FwcC5qc3gnXG5pbXBvcnQgJy4vaW5kZXguY3NzJ1xuXG5cbmNvbnN0IHF1ZXJ5Q2xpZW50PW5ldyBRdWVyeUNsaWVudCgpO1xuY3JlYXRlUm9vdChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm9vdCcpKS5yZW5kZXIoXG4gIDxTdHJpY3RNb2RlPlxuICAgIDxRdWVyeUNsaWVudFByb3ZpZGVyIGNsaWVudD17cXVlcnlDbGllbnR9ID5cbiAgICA8QXBwIC8+XG4gICAgPC9RdWVyeUNsaWVudFByb3ZpZGVyPlxuICA8L1N0cmljdE1vZGU+LFxuKSJdLCJmaWxlIjoiQzovVXNlcnMvUHJhZ3lhbiBLYWRlbC9PbmVEcml2ZS9EZXNrdG9wL0dvZ2Vhci13ZWIvZnJvbnRlbmQvc3JjL21haW4uanN4In0=
