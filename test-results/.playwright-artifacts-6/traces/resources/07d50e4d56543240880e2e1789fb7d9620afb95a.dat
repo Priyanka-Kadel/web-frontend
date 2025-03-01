@@ -1,0 +1,249 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/common/customer/PublicNavbar.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=6eec5e1e"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.__vite_plugin_react_preamble_installed__) {
+    throw new Error("@vitejs/plugin-react can't detect preamble. Something is wrong. See https://github.com/vitejs/vite-plugin-react/pull/11#discussion_r430879201");
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = (type, id) => {
+    RefreshRuntime.register(type, "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx " + id);
+  };
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/node_modules/.vite/deps/react.js?v=6eec5e1e"; const React = __vite__cjsImport3_react.__esModule ? __vite__cjsImport3_react.default : __vite__cjsImport3_react; const useEffect = __vite__cjsImport3_react["useEffect"]; const useState = __vite__cjsImport3_react["useState"];
+import { FiMenu, FiShoppingCart, FiUser, FiX } from "/node_modules/.vite/deps/react-icons_fi.js?v=6eec5e1e";
+import { Link, useLocation, useNavigate } from "/node_modules/.vite/deps/react-router-dom.js?v=6eec5e1e";
+import { ToastContainer } from "/node_modules/.vite/deps/react-toastify.js?v=6eec5e1e";
+import "/node_modules/react-toastify/dist/ReactToastify.css";
+const PublicNavbar = () => {
+  _s();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(storedCart);
+  }, []);
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
+  const navLinks = [
+    { to: "/dashboard", label: "Home" },
+    { to: "/all-gears", label: "All Gears" },
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Questions?" }
+  ];
+  return /* @__PURE__ */ jsxDEV("nav", { className: "bg-white shadow-md sticky top-0 z-10", children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "container mx-auto px-4 py-3 flex justify-between items-center", children: [
+      /* @__PURE__ */ jsxDEV(Link, { to: "/dashboard", className: "text-2xl font-bold text-gray-800 hover:text-blue-600 transition", children: "GoGear" }, void 0, false, {
+        fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+        lineNumber: 36,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "hidden md:flex justify-center space-x-6", children: navLinks.map(
+        (link) => /* @__PURE__ */ jsxDEV(
+          Link,
+          {
+            to: link.to,
+            className: `text-gray-700 hover:text-blue-600 transition ${location.pathname === link.to ? "font-bold text-blue-600" : ""}`,
+            children: link.label
+          },
+          link.to,
+          false,
+          {
+            fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+            lineNumber: 43,
+            columnNumber: 11
+          },
+          this
+        )
+      ) }, void 0, false, {
+        fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+        lineNumber: 41,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "flex items-center space-x-6", children: [
+        /* @__PURE__ */ jsxDEV("div", { className: "relative", onClick: () => setCartOpen(!cartOpen), children: [
+          /* @__PURE__ */ jsxDEV(FiShoppingCart, { size: 24, className: "text-gray-700 hover:text-blue-600 cursor-pointer transition" }, void 0, false, {
+            fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+            lineNumber: 59,
+            columnNumber: 13
+          }, this),
+          cartItems.length > 0 && /* @__PURE__ */ jsxDEV("span", { className: "absolute top-0 right-0 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full", children: cartItems.length }, void 0, false, {
+            fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+            lineNumber: 61,
+            columnNumber: 13
+          }, this),
+          cartOpen && /* @__PURE__ */ jsxDEV("div", { className: "absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-lg border-2 border-blue-500 p-2", children: cartItems.length > 0 ? /* @__PURE__ */ jsxDEV(Fragment, { children: [
+            cartItems.map(
+              (item) => /* @__PURE__ */ jsxDEV("div", { className: "flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-100", children: [
+                /* @__PURE__ */ jsxDEV("img", { src: item.image, alt: item.name, className: "w-12 h-12 object-cover rounded" }, void 0, false, {
+                  fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+                  lineNumber: 73,
+                  columnNumber: 25
+                }, this),
+                /* @__PURE__ */ jsxDEV("div", { className: "ml-2 flex-1", children: [
+                  /* @__PURE__ */ jsxDEV("span", { className: "block font-semibold", children: item.name }, void 0, false, {
+                    fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+                    lineNumber: 75,
+                    columnNumber: 27
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("span", { className: "block text-sm text-gray-500", children: item.price }, void 0, false, {
+                    fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+                    lineNumber: 76,
+                    columnNumber: 27
+                  }, this)
+                ] }, void 0, true, {
+                  fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+                  lineNumber: 74,
+                  columnNumber: 25
+                }, this)
+              ] }, item.id, true, {
+                fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+                lineNumber: 72,
+                columnNumber: 17
+              }, this)
+            ),
+            /* @__PURE__ */ jsxDEV(Link, { to: "/cart", className: "block px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 transition text-center rounded", children: "View Cart" }, void 0, false, {
+              fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+              lineNumber: 80,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+            lineNumber: 70,
+            columnNumber: 15
+          }, this) : /* @__PURE__ */ jsxDEV("div", { className: "px-4 py-2 text-gray-700", children: "Your cart is empty" }, void 0, false, {
+            fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+            lineNumber: 85,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+            lineNumber: 68,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+          lineNumber: 58,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "relative", children: [
+          /* @__PURE__ */ jsxDEV("button", { onClick: () => setProfileOpen(!profileOpen), className: "text-gray-700 hover:text-blue-600", children: /* @__PURE__ */ jsxDEV(FiUser, { size: 24 }, void 0, false, {
+            fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+            lineNumber: 94,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+            lineNumber: 93,
+            columnNumber: 13
+          }, this),
+          profileOpen && /* @__PURE__ */ jsxDEV("div", { className: "absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg border-2 border-blue-500 p-2", children: [
+            /* @__PURE__ */ jsxDEV("div", { className: "px-4 py-2 text-gray-700 font-semibold", children: "Profile" }, void 0, false, {
+              fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+              lineNumber: 99,
+              columnNumber: 17
+            }, this),
+            /* @__PURE__ */ jsxDEV("button", { onClick: handleLogout, className: "w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100", children: "Logout" }, void 0, false, {
+              fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+              lineNumber: 100,
+              columnNumber: 17
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+            lineNumber: 98,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+          lineNumber: 92,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+        lineNumber: 56,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("button", { className: "md:hidden", onClick: () => setMenuOpen(!menuOpen), children: menuOpen ? /* @__PURE__ */ jsxDEV(FiX, { size: 28 }, void 0, false, {
+        fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+        lineNumber: 110,
+        columnNumber: 23
+      }, this) : /* @__PURE__ */ jsxDEV(FiMenu, { size: 28 }, void 0, false, {
+        fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+        lineNumber: 110,
+        columnNumber: 43
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+        lineNumber: 109,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+      lineNumber: 34,
+      columnNumber: 7
+    }, this),
+    menuOpen && /* @__PURE__ */ jsxDEV("div", { className: "md:hidden bg-white border-t border-gray-200", children: navLinks.map(
+      (link) => /* @__PURE__ */ jsxDEV(
+        Link,
+        {
+          to: link.to,
+          className: "block px-4 py-2 text-gray-700 hover:bg-gray-100",
+          onClick: () => setMenuOpen(false),
+          children: link.label
+        },
+        link.to,
+        false,
+        {
+          fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+          lineNumber: 118,
+          columnNumber: 9
+        },
+        this
+      )
+    ) }, void 0, false, {
+      fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+      lineNumber: 116,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(ToastContainer, { position: "top-right", autoClose: 1500 }, void 0, false, {
+      fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+      lineNumber: 130,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx",
+    lineNumber: 33,
+    columnNumber: 5
+  }, this);
+};
+_s(PublicNavbar, "OqscWjLIFKslnW1bN5wDzyECAsU=", false, function() {
+  return [useLocation, useNavigate];
+});
+_c = PublicNavbar;
+export default PublicNavbar;
+var _c;
+$RefreshReg$(_c, "PublicNavbar");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Pragyan Kadel/OneDrive/Desktop/Gogear-web/frontend/src/components/common/customer/PublicNavbar.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBbUNRLFNBa0NVLFVBbENWOzJCQW5DUjtBQUFnQkEsTUFBV0MsY0FBUSxPQUFRLHNCQUFPO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQ2xELFNBQVNDLFFBQVFDLGdCQUFnQkMsUUFBUUMsV0FBVztBQUNwRCxTQUFTQyxNQUFNQyxhQUFhQyxtQkFBbUI7QUFDL0MsU0FBU0Msc0JBQXNCO0FBQy9CLE9BQU87QUFFUCxNQUFNQyxlQUFlQSxNQUFNO0FBQUFDLEtBQUE7QUFDekIsUUFBTUMsV0FBV0wsWUFBWTtBQUM3QixRQUFNTSxXQUFXTCxZQUFZO0FBQzdCLFFBQU0sQ0FBQ00sVUFBVUMsV0FBVyxJQUFJZCxTQUFTLEtBQUs7QUFDOUMsUUFBTSxDQUFDZSxhQUFhQyxjQUFjLElBQUloQixTQUFTLEtBQUs7QUFDcEQsUUFBTSxDQUFDaUIsVUFBVUMsV0FBVyxJQUFJbEIsU0FBUyxLQUFLO0FBQzlDLFFBQU0sQ0FBQ21CLFdBQVdDLFlBQVksSUFBSXBCLFNBQVMsRUFBRTtBQUU3Q0QsWUFBVSxNQUFNO0FBQ2QsVUFBTXNCLGFBQWFDLEtBQUtDLE1BQU1DLGFBQWFDLFFBQVEsTUFBTSxDQUFDLEtBQUs7QUFDL0RMLGlCQUFhQyxVQUFVO0FBQUEsRUFDekIsR0FBRyxFQUFFO0FBRUwsUUFBTUssZUFBZUEsTUFBTTtBQUN6QkYsaUJBQWFHLFdBQVcsTUFBTTtBQUM5QmYsYUFBUyxRQUFRO0FBQUEsRUFDbkI7QUFFQSxRQUFNZ0IsV0FBVztBQUFBLElBQ2YsRUFBRUMsSUFBSSxjQUFjQyxPQUFPLE9BQU87QUFBQSxJQUNsQyxFQUFFRCxJQUFJLGNBQWNDLE9BQU8sWUFBWTtBQUFBLElBQ3ZDLEVBQUVELElBQUksVUFBVUMsT0FBTyxRQUFRO0FBQUEsSUFDL0IsRUFBRUQsSUFBSSxZQUFZQyxPQUFPLGFBQWE7QUFBQSxFQUFDO0FBR3pDLFNBQ0UsdUJBQUMsU0FBSSxXQUFVLHdDQUNiO0FBQUEsMkJBQUMsU0FBSSxXQUFVLGlFQUViO0FBQUEsNkJBQUMsUUFBSyxJQUFHLGNBQWEsV0FBVSxtRUFBa0Usc0JBQWxHO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFFQTtBQUFBLE1BR0EsdUJBQUMsU0FBSSxXQUFVLDJDQUNaRixtQkFBU0c7QUFBQUEsUUFBSSxDQUFDQyxTQUNiO0FBQUEsVUFBQztBQUFBO0FBQUEsWUFFQyxJQUFJQSxLQUFLSDtBQUFBQSxZQUNULFdBQVcsZ0RBQ1RsQixTQUFTc0IsYUFBYUQsS0FBS0gsS0FBSyw0QkFBNEIsRUFBRTtBQUFBLFlBRy9ERyxlQUFLRjtBQUFBQTtBQUFBQSxVQU5ERSxLQUFLSDtBQUFBQSxVQURaO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsUUFRQTtBQUFBLE1BQ0QsS0FYSDtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBWUE7QUFBQSxNQUdBLHVCQUFDLFNBQUksV0FBVSwrQkFFYjtBQUFBLCtCQUFDLFNBQUksV0FBVSxZQUFXLFNBQVMsTUFBTVgsWUFBWSxDQUFDRCxRQUFRLEdBQzVEO0FBQUEsaUNBQUMsa0JBQWUsTUFBTSxJQUFJLFdBQVUsaUVBQXBDO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQWlHO0FBQUEsVUFDaEdFLFVBQVVlLFNBQVMsS0FDbEIsdUJBQUMsVUFBSyxXQUFVLDhHQUNiZixvQkFBVWUsVUFEYjtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUVBO0FBQUEsVUFJRGpCLFlBQ0MsdUJBQUMsU0FBSSxXQUFVLHlGQUNaRSxvQkFBVWUsU0FBUyxJQUNsQixtQ0FDR2Y7QUFBQUEsc0JBQVVZO0FBQUFBLGNBQUksQ0FBQ0ksU0FDZCx1QkFBQyxTQUFrQixXQUFVLCtFQUMzQjtBQUFBLHVDQUFDLFNBQUksS0FBS0EsS0FBS0MsT0FBTyxLQUFLRCxLQUFLRSxNQUFNLFdBQVUsb0NBQWhEO0FBQUE7QUFBQTtBQUFBO0FBQUEsdUJBQWdGO0FBQUEsZ0JBQ2hGLHVCQUFDLFNBQUksV0FBVSxlQUNiO0FBQUEseUNBQUMsVUFBSyxXQUFVLHVCQUF1QkYsZUFBS0UsUUFBNUM7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFBaUQ7QUFBQSxrQkFDakQsdUJBQUMsVUFBSyxXQUFVLCtCQUErQkYsZUFBS0csU0FBcEQ7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFBMEQ7QUFBQSxxQkFGNUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSx1QkFHQTtBQUFBLG1CQUxRSCxLQUFLSSxJQUFmO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBTUE7QUFBQSxZQUNEO0FBQUEsWUFDRCx1QkFBQyxRQUFLLElBQUcsU0FBUSxXQUFVLDJGQUEwRix5QkFBckg7QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFFQTtBQUFBLGVBWkY7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFhQSxJQUVBLHVCQUFDLFNBQUksV0FBVSwyQkFBMEIsa0NBQXpDO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQTJELEtBakIvRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQW1CQTtBQUFBLGFBN0JKO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUErQkE7QUFBQSxRQUdBLHVCQUFDLFNBQUksV0FBVSxZQUNiO0FBQUEsaUNBQUMsWUFBTyxTQUFTLE1BQU12QixlQUFlLENBQUNELFdBQVcsR0FBRyxXQUFVLHFDQUM3RCxpQ0FBQyxVQUFPLE1BQU0sTUFBZDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFpQixLQURuQjtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUVBO0FBQUEsVUFFQ0EsZUFDQyx1QkFBQyxTQUFJLFdBQVUseUZBQ2I7QUFBQSxtQ0FBQyxTQUFJLFdBQVUseUNBQXdDLHVCQUF2RDtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUE4RDtBQUFBLFlBQzlELHVCQUFDLFlBQU8sU0FBU1csY0FBYyxXQUFVLDZEQUE0RCxzQkFBckc7QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFFQTtBQUFBLGVBSkY7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFLQTtBQUFBLGFBWEo7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQWFBO0FBQUEsV0FqREY7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQWtEQTtBQUFBLE1BR0EsdUJBQUMsWUFBTyxXQUFVLGFBQVksU0FBUyxNQUFNWixZQUFZLENBQUNELFFBQVEsR0FDL0RBLHFCQUFXLHVCQUFDLE9BQUksTUFBTSxNQUFYO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBYyxJQUFNLHVCQUFDLFVBQU8sTUFBTSxNQUFkO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBaUIsS0FEbkQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUVBO0FBQUEsU0E3RUY7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQThFQTtBQUFBLElBR0NBLFlBQ0MsdUJBQUMsU0FBSSxXQUFVLCtDQUNaZSxtQkFBU0c7QUFBQUEsTUFBSSxDQUFDQyxTQUNiO0FBQUEsUUFBQztBQUFBO0FBQUEsVUFFQyxJQUFJQSxLQUFLSDtBQUFBQSxVQUNULFdBQVU7QUFBQSxVQUNWLFNBQVMsTUFBTWYsWUFBWSxLQUFLO0FBQUEsVUFFL0JrQixlQUFLRjtBQUFBQTtBQUFBQSxRQUxERSxLQUFLSDtBQUFBQSxRQURaO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsTUFPQTtBQUFBLElBQ0QsS0FWSDtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBV0E7QUFBQSxJQUdGLHVCQUFDLGtCQUFlLFVBQVMsYUFBWSxXQUFXLFFBQWhEO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FBcUQ7QUFBQSxPQWpHdkQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQWtHQTtBQUVKO0FBQUVuQixHQTlISUQsY0FBWTtBQUFBLFVBQ0NILGFBQ0FDLFdBQVc7QUFBQTtBQUFBaUMsS0FGeEIvQjtBQWdJTixlQUFlQTtBQUFhLElBQUErQjtBQUFBQyxhQUFBRCxJQUFBIiwibmFtZXMiOlsidXNlRWZmZWN0IiwidXNlU3RhdGUiLCJGaU1lbnUiLCJGaVNob3BwaW5nQ2FydCIsIkZpVXNlciIsIkZpWCIsIkxpbmsiLCJ1c2VMb2NhdGlvbiIsInVzZU5hdmlnYXRlIiwiVG9hc3RDb250YWluZXIiLCJQdWJsaWNOYXZiYXIiLCJfcyIsImxvY2F0aW9uIiwibmF2aWdhdGUiLCJtZW51T3BlbiIsInNldE1lbnVPcGVuIiwicHJvZmlsZU9wZW4iLCJzZXRQcm9maWxlT3BlbiIsImNhcnRPcGVuIiwic2V0Q2FydE9wZW4iLCJjYXJ0SXRlbXMiLCJzZXRDYXJ0SXRlbXMiLCJzdG9yZWRDYXJ0IiwiSlNPTiIsInBhcnNlIiwibG9jYWxTdG9yYWdlIiwiZ2V0SXRlbSIsImhhbmRsZUxvZ291dCIsInJlbW92ZUl0ZW0iLCJuYXZMaW5rcyIsInRvIiwibGFiZWwiLCJtYXAiLCJsaW5rIiwicGF0aG5hbWUiLCJsZW5ndGgiLCJpdGVtIiwiaW1hZ2UiLCJuYW1lIiwicHJpY2UiLCJpZCIsIl9jIiwiJFJlZnJlc2hSZWckIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIlB1YmxpY05hdmJhci5qc3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tIFwicmVhY3RcIjtcclxuaW1wb3J0IHsgRmlNZW51LCBGaVNob3BwaW5nQ2FydCwgRmlVc2VyLCBGaVggfSBmcm9tIFwicmVhY3QtaWNvbnMvZmlcIjtcclxuaW1wb3J0IHsgTGluaywgdXNlTG9jYXRpb24sIHVzZU5hdmlnYXRlIH0gZnJvbSBcInJlYWN0LXJvdXRlci1kb21cIjtcclxuaW1wb3J0IHsgVG9hc3RDb250YWluZXIgfSBmcm9tIFwicmVhY3QtdG9hc3RpZnlcIjtcclxuaW1wb3J0IFwicmVhY3QtdG9hc3RpZnkvZGlzdC9SZWFjdFRvYXN0aWZ5LmNzc1wiO1xyXG5cclxuY29uc3QgUHVibGljTmF2YmFyID0gKCkgPT4ge1xyXG4gIGNvbnN0IGxvY2F0aW9uID0gdXNlTG9jYXRpb24oKTtcclxuICBjb25zdCBuYXZpZ2F0ZSA9IHVzZU5hdmlnYXRlKCk7XHJcbiAgY29uc3QgW21lbnVPcGVuLCBzZXRNZW51T3Blbl0gPSB1c2VTdGF0ZShmYWxzZSk7XHJcbiAgY29uc3QgW3Byb2ZpbGVPcGVuLCBzZXRQcm9maWxlT3Blbl0gPSB1c2VTdGF0ZShmYWxzZSk7XHJcbiAgY29uc3QgW2NhcnRPcGVuLCBzZXRDYXJ0T3Blbl0gPSB1c2VTdGF0ZShmYWxzZSk7XHJcbiAgY29uc3QgW2NhcnRJdGVtcywgc2V0Q2FydEl0ZW1zXSA9IHVzZVN0YXRlKFtdKTtcclxuXHJcbiAgdXNlRWZmZWN0KCgpID0+IHtcclxuICAgIGNvbnN0IHN0b3JlZENhcnQgPSBKU09OLnBhcnNlKGxvY2FsU3RvcmFnZS5nZXRJdGVtKFwiY2FydFwiKSkgfHwgW107XHJcbiAgICBzZXRDYXJ0SXRlbXMoc3RvcmVkQ2FydCk7XHJcbiAgfSwgW10pO1xyXG5cclxuICBjb25zdCBoYW5kbGVMb2dvdXQgPSAoKSA9PiB7XHJcbiAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbShcInVzZXJcIik7IC8vIFJlbW92ZSB1c2VyIHNlc3Npb25cclxuICAgIG5hdmlnYXRlKFwiL2xvZ2luXCIpOyAvLyBSZWRpcmVjdCB0byBsb2dpbiBwYWdlXHJcbiAgfTtcclxuXHJcbiAgY29uc3QgbmF2TGlua3MgPSBbXHJcbiAgICB7IHRvOiBcIi9kYXNoYm9hcmRcIiwgbGFiZWw6IFwiSG9tZVwiIH0sXHJcbiAgICB7IHRvOiBcIi9hbGwtZ2VhcnNcIiwgbGFiZWw6IFwiQWxsIEdlYXJzXCIgfSxcclxuICAgIHsgdG86IFwiL2Fib3V0XCIsIGxhYmVsOiBcIkFib3V0XCIgfSxcclxuICAgIHsgdG86IFwiL2NvbnRhY3RcIiwgbGFiZWw6IFwiUXVlc3Rpb25zP1wiIH0sXHJcbiAgXTtcclxuXHJcbiAgcmV0dXJuIChcclxuICAgIDxuYXYgY2xhc3NOYW1lPVwiYmctd2hpdGUgc2hhZG93LW1kIHN0aWNreSB0b3AtMCB6LTEwXCI+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY29udGFpbmVyIG14LWF1dG8gcHgtNCBweS0zIGZsZXgganVzdGlmeS1iZXR3ZWVuIGl0ZW1zLWNlbnRlclwiPlxyXG4gICAgICAgIHsvKiDwn5S5IEdvR2VhciBMb2dvIChOYXZpZ2F0ZXMgdG8gRGFzaGJvYXJkKSAqL31cclxuICAgICAgICA8TGluayB0bz1cIi9kYXNoYm9hcmRcIiBjbGFzc05hbWU9XCJ0ZXh0LTJ4bCBmb250LWJvbGQgdGV4dC1ncmF5LTgwMCBob3Zlcjp0ZXh0LWJsdWUtNjAwIHRyYW5zaXRpb25cIj5cclxuICAgICAgICAgIEdvR2VhclxyXG4gICAgICAgIDwvTGluaz5cclxuXHJcbiAgICAgICAgey8qIPCflLkgTmF2aWdhdGlvbiBMaW5rcyAoSGlkZGVuIG9uIE1vYmlsZSkgKi99XHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJoaWRkZW4gbWQ6ZmxleCBqdXN0aWZ5LWNlbnRlciBzcGFjZS14LTZcIj5cclxuICAgICAgICAgIHtuYXZMaW5rcy5tYXAoKGxpbmspID0+IChcclxuICAgICAgICAgICAgPExpbmtcclxuICAgICAgICAgICAgICBrZXk9e2xpbmsudG99XHJcbiAgICAgICAgICAgICAgdG89e2xpbmsudG99XHJcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgdGV4dC1ncmF5LTcwMCBob3Zlcjp0ZXh0LWJsdWUtNjAwIHRyYW5zaXRpb24gJHtcclxuICAgICAgICAgICAgICAgIGxvY2F0aW9uLnBhdGhuYW1lID09PSBsaW5rLnRvID8gXCJmb250LWJvbGQgdGV4dC1ibHVlLTYwMFwiIDogXCJcIlxyXG4gICAgICAgICAgICAgIH1gfVxyXG4gICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAge2xpbmsubGFiZWx9XHJcbiAgICAgICAgICAgIDwvTGluaz5cclxuICAgICAgICAgICkpfVxyXG4gICAgICAgIDwvZGl2PlxyXG5cclxuICAgICAgICB7Lyog8J+UuSBDYXJ0ICYgUHJvZmlsZSBJY29ucyAoVG9nZXRoZXIpICovfVxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgc3BhY2UteC02XCI+XHJcbiAgICAgICAgICB7LyogQ2FydCBJY29uICovfVxyXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJyZWxhdGl2ZVwiIG9uQ2xpY2s9eygpID0+IHNldENhcnRPcGVuKCFjYXJ0T3Blbil9PlxyXG4gICAgICAgICAgICA8RmlTaG9wcGluZ0NhcnQgc2l6ZT17MjR9IGNsYXNzTmFtZT1cInRleHQtZ3JheS03MDAgaG92ZXI6dGV4dC1ibHVlLTYwMCBjdXJzb3ItcG9pbnRlciB0cmFuc2l0aW9uXCIgLz5cclxuICAgICAgICAgICAge2NhcnRJdGVtcy5sZW5ndGggPiAwICYmIChcclxuICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJhYnNvbHV0ZSB0b3AtMCByaWdodC0wIGJnLXJlZC01MDAgdGV4dC13aGl0ZSB0ZXh0LXhzIHctNSBoLTUgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1mdWxsXCI+XHJcbiAgICAgICAgICAgICAgICB7Y2FydEl0ZW1zLmxlbmd0aH1cclxuICAgICAgICAgICAgICA8L3NwYW4+XHJcbiAgICAgICAgICAgICl9XHJcblxyXG4gICAgICAgICAgICB7LyogQ2FydCBEcm9wZG93biAqL31cclxuICAgICAgICAgICAge2NhcnRPcGVuICYmIChcclxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIHJpZ2h0LTAgbXQtMiB3LTY0IGJnLXdoaXRlIHNoYWRvdy1sZyByb3VuZGVkLWxnIGJvcmRlci0yIGJvcmRlci1ibHVlLTUwMCBwLTJcIj5cclxuICAgICAgICAgICAgICAgIHtjYXJ0SXRlbXMubGVuZ3RoID4gMCA/IChcclxuICAgICAgICAgICAgICAgICAgPD5cclxuICAgICAgICAgICAgICAgICAgICB7Y2FydEl0ZW1zLm1hcCgoaXRlbSkgPT4gKFxyXG4gICAgICAgICAgICAgICAgICAgICAgPGRpdiBrZXk9e2l0ZW0uaWR9IGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBweC00IHB5LTIgdGV4dC1ncmF5LTcwMCBob3ZlcjpiZy1ncmF5LTEwMFwiPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8aW1nIHNyYz17aXRlbS5pbWFnZX0gYWx0PXtpdGVtLm5hbWV9IGNsYXNzTmFtZT1cInctMTIgaC0xMiBvYmplY3QtY292ZXIgcm91bmRlZFwiIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibWwtMiBmbGV4LTFcIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJibG9jayBmb250LXNlbWlib2xkXCI+e2l0ZW0ubmFtZX08L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiYmxvY2sgdGV4dC1zbSB0ZXh0LWdyYXktNTAwXCI+e2l0ZW0ucHJpY2V9PC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgICAgICkpfVxyXG4gICAgICAgICAgICAgICAgICAgIDxMaW5rIHRvPVwiL2NhcnRcIiBjbGFzc05hbWU9XCJibG9jayBweC00IHB5LTIgYmctYmx1ZS01MDAgdGV4dC13aGl0ZSBob3ZlcjpiZy1ibHVlLTYwMCB0cmFuc2l0aW9uIHRleHQtY2VudGVyIHJvdW5kZWRcIj5cclxuICAgICAgICAgICAgICAgICAgICAgIFZpZXcgQ2FydFxyXG4gICAgICAgICAgICAgICAgICAgIDwvTGluaz5cclxuICAgICAgICAgICAgICAgICAgPC8+XHJcbiAgICAgICAgICAgICAgICApIDogKFxyXG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInB4LTQgcHktMiB0ZXh0LWdyYXktNzAwXCI+WW91ciBjYXJ0IGlzIGVtcHR5PC9kaXY+XHJcbiAgICAgICAgICAgICAgICApfVxyXG4gICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICApfVxyXG4gICAgICAgICAgPC9kaXY+XHJcblxyXG4gICAgICAgICAgey8qIFByb2ZpbGUgSWNvbiAmIERyb3Bkb3duICovfVxyXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJyZWxhdGl2ZVwiPlxyXG4gICAgICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9eygpID0+IHNldFByb2ZpbGVPcGVuKCFwcm9maWxlT3Blbil9IGNsYXNzTmFtZT1cInRleHQtZ3JheS03MDAgaG92ZXI6dGV4dC1ibHVlLTYwMFwiPlxyXG4gICAgICAgICAgICAgIDxGaVVzZXIgc2l6ZT17MjR9IC8+XHJcbiAgICAgICAgICAgIDwvYnV0dG9uPlxyXG5cclxuICAgICAgICAgICAge3Byb2ZpbGVPcGVuICYmIChcclxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIHJpZ2h0LTAgbXQtMiB3LTQ4IGJnLXdoaXRlIHNoYWRvdy1sZyByb3VuZGVkLWxnIGJvcmRlci0yIGJvcmRlci1ibHVlLTUwMCBwLTJcIj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicHgtNCBweS0yIHRleHQtZ3JheS03MDAgZm9udC1zZW1pYm9sZFwiPlByb2ZpbGU8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxidXR0b24gb25DbGljaz17aGFuZGxlTG9nb3V0fSBjbGFzc05hbWU9XCJ3LWZ1bGwgdGV4dC1sZWZ0IHB4LTQgcHktMiB0ZXh0LXJlZC01MDAgaG92ZXI6YmctZ3JheS0xMDBcIj5cclxuICAgICAgICAgICAgICAgICAgTG9nb3V0XHJcbiAgICAgICAgICAgICAgICA8L2J1dHRvbj5cclxuICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgKX1cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG5cclxuICAgICAgICB7Lyog8J+UuSBNb2JpbGUgTWVudSBCdXR0b24gKi99XHJcbiAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9XCJtZDpoaWRkZW5cIiBvbkNsaWNrPXsoKSA9PiBzZXRNZW51T3BlbighbWVudU9wZW4pfT5cclxuICAgICAgICAgIHttZW51T3BlbiA/IDxGaVggc2l6ZT17Mjh9IC8+IDogPEZpTWVudSBzaXplPXsyOH0gLz59XHJcbiAgICAgICAgPC9idXR0b24+XHJcbiAgICAgIDwvZGl2PlxyXG5cclxuICAgICAgey8qIPCflLkgTW9iaWxlIE1lbnUgKE9ubHkgdmlzaWJsZSBvbiBzbWFsbCBzY3JlZW5zKSAqL31cclxuICAgICAge21lbnVPcGVuICYmIChcclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1kOmhpZGRlbiBiZy13aGl0ZSBib3JkZXItdCBib3JkZXItZ3JheS0yMDBcIj5cclxuICAgICAgICAgIHtuYXZMaW5rcy5tYXAoKGxpbmspID0+IChcclxuICAgICAgICAgICAgPExpbmtcclxuICAgICAgICAgICAgICBrZXk9e2xpbmsudG99XHJcbiAgICAgICAgICAgICAgdG89e2xpbmsudG99XHJcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiYmxvY2sgcHgtNCBweS0yIHRleHQtZ3JheS03MDAgaG92ZXI6YmctZ3JheS0xMDBcIlxyXG4gICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldE1lbnVPcGVuKGZhbHNlKX1cclxuICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgIHtsaW5rLmxhYmVsfVxyXG4gICAgICAgICAgICA8L0xpbms+XHJcbiAgICAgICAgICApKX1cclxuICAgICAgICA8L2Rpdj5cclxuICAgICAgKX1cclxuXHJcbiAgICAgIDxUb2FzdENvbnRhaW5lciBwb3NpdGlvbj1cInRvcC1yaWdodFwiIGF1dG9DbG9zZT17MTUwMH0gLz5cclxuICAgIDwvbmF2PlxyXG4gICk7XHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBQdWJsaWNOYXZiYXI7Il0sImZpbGUiOiJDOi9Vc2Vycy9QcmFneWFuIEthZGVsL09uZURyaXZlL0Rlc2t0b3AvR29nZWFyLXdlYi9mcm9udGVuZC9zcmMvY29tcG9uZW50cy9jb21tb24vY3VzdG9tZXIvUHVibGljTmF2YmFyLmpzeCJ9

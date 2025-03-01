@@ -1,0 +1,25 @@
+{"version":7,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"win32","wallTime":1740812321210,"monotonicTime":5143.404,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","startTime":5144.7880000000005,"class":"Test","method":"hook","apiName":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","parentId":"hook@1","startTime":5145.47,"class":"Test","method":"hook","apiName":"beforeEach hook","params":{},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\AllGears.spec.js","line":3,"column":8}]}
+{"type":"before","callId":"fixture@3","parentId":"hook@2","startTime":5147.946,"class":"Test","method":"fixture","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@4","parentId":"fixture@3","startTime":5148.725,"class":"Test","method":"pw:api","apiName":"browser.newContext","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","viewport":"Object","serviceWorkers":"allow","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","recordHar":"undefined","reducedMotion":"undefined","forcedColors":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@4","endTime":5153.772,"attachments":[]}
+{"type":"after","callId":"fixture@3","endTime":5158.898,"attachments":[]}
+{"type":"before","callId":"fixture@5","parentId":"hook@2","startTime":5159.571,"class":"Test","method":"fixture","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@6","parentId":"fixture@5","startTime":5161.095,"class":"Test","method":"pw:api","apiName":"browserContext.newPage","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@6","endTime":5229.323,"attachments":[]}
+{"type":"after","callId":"fixture@5","endTime":5229.558,"attachments":[]}
+{"type":"before","callId":"pw:api@7","parentId":"hook@2","startTime":5231.704,"class":"Test","method":"pw:api","apiName":"page.goto","params":{"url":"http://localhost:5173/all-gears","waitUntil":"load"},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\AllGears.spec.js","line":4,"column":16}]}
+{"type":"after","callId":"pw:api@7","endTime":5767.342,"attachments":[]}
+{"type":"after","callId":"hook@2","endTime":5767.671,"attachments":[]}
+{"type":"after","callId":"hook@1","endTime":5767.823,"attachments":[]}
+{"type":"before","callId":"expect@8","startTime":5769.237,"class":"Test","method":"expect","apiName":"expect.toBeVisible","params":{},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\AllGears.spec.js","line":21,"column":36}]}
+{"type":"after","callId":"expect@8","endTime":5810.665,"attachments":[]}
+{"type":"before","callId":"hook@9","startTime":5811.1630000000005,"class":"Test","method":"hook","apiName":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@10","parentId":"hook@9","startTime":5811.803,"class":"Test","method":"fixture","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"after","callId":"fixture@10","endTime":5811.908,"attachments":[]}
+{"type":"before","callId":"fixture@11","parentId":"hook@9","startTime":5812.301,"class":"Test","method":"fixture","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"after","callId":"fixture@11","endTime":5812.398,"attachments":[]}
+{"type":"after","callId":"hook@9","endTime":6007.123,"attachments":[]}
+{"type":"before","callId":"attach@12","startTime":6182.57,"class":"Test","method":"attach","apiName":"attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@12","endTime":6182.706,"attachments":[]}

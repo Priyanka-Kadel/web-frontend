@@ -1,0 +1,31 @@
+{"version":7,"type":"context-options","origin":"testRunner","browserName":"","options":{},"platform":"win32","wallTime":1740812319549,"monotonicTime":3482.3940000000002,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","startTime":3483.938,"class":"Test","method":"hook","apiName":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","parentId":"hook@1","startTime":3484.806,"class":"Test","method":"hook","apiName":"beforeEach hook","params":{},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\AllGears.spec.js","line":3,"column":8}]}
+{"type":"before","callId":"fixture@3","parentId":"hook@2","startTime":3489.534,"class":"Test","method":"fixture","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@4","parentId":"fixture@3","startTime":3490.796,"class":"Test","method":"pw:api","apiName":"browser.newContext","params":{"acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","viewport":"Object","serviceWorkers":"allow","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","recordHar":"undefined","reducedMotion":"undefined","forcedColors":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@4","endTime":3495.913,"attachments":[]}
+{"type":"after","callId":"fixture@3","endTime":3501.9,"attachments":[]}
+{"type":"before","callId":"fixture@5","parentId":"hook@2","startTime":3502.907,"class":"Test","method":"fixture","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@6","parentId":"fixture@5","startTime":3506.285,"class":"Test","method":"pw:api","apiName":"browserContext.newPage","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@6","endTime":3590.7110000000002,"attachments":[]}
+{"type":"after","callId":"fixture@5","endTime":3590.971,"attachments":[]}
+{"type":"before","callId":"pw:api@7","parentId":"hook@2","startTime":3593.248,"class":"Test","method":"pw:api","apiName":"page.goto","params":{"url":"http://localhost:5173/all-gears","waitUntil":"load"},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\AllGears.spec.js","line":4,"column":16}]}
+{"type":"after","callId":"pw:api@7","endTime":4574.893,"attachments":[]}
+{"type":"after","callId":"hook@2","endTime":4575.329,"attachments":[]}
+{"type":"after","callId":"hook@1","endTime":4575.741,"attachments":[]}
+{"type":"before","callId":"expect@8","startTime":4577.983,"class":"Test","method":"expect","apiName":"expect.toBeVisible","params":{},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\AllGears.spec.js","line":15,"column":68}]}
+{"type":"after","callId":"expect@8","endTime":4622.494,"attachments":[]}
+{"type":"before","callId":"expect@9","startTime":4624.251,"class":"Test","method":"expect","apiName":"expect.toBeVisible","params":{},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\AllGears.spec.js","line":15,"column":68}]}
+{"type":"after","callId":"expect@9","endTime":4644.648,"attachments":[]}
+{"type":"before","callId":"expect@10","startTime":4647.199,"class":"Test","method":"expect","apiName":"expect.toBeVisible","params":{},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\AllGears.spec.js","line":15,"column":68}]}
+{"type":"after","callId":"expect@10","endTime":4666.6720000000005,"attachments":[]}
+{"type":"before","callId":"expect@11","startTime":4668.716,"class":"Test","method":"expect","apiName":"expect.toBeVisible","params":{},"stack":[{"file":"C:\\Users\\Pragyan Kadel\\OneDrive\\Desktop\\Gogear-web\\frontend\\tests\\AllGears.spec.js","line":15,"column":68}]}
+{"type":"after","callId":"expect@11","endTime":4687.29,"attachments":[]}
+{"type":"before","callId":"hook@12","startTime":4688.747,"class":"Test","method":"hook","apiName":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@13","parentId":"hook@12","startTime":4689.998,"class":"Test","method":"fixture","apiName":"fixture: page","params":{},"stack":[]}
+{"type":"after","callId":"fixture@13","endTime":4690.247,"attachments":[]}
+{"type":"before","callId":"fixture@14","parentId":"hook@12","startTime":4691.057,"class":"Test","method":"fixture","apiName":"fixture: context","params":{},"stack":[]}
+{"type":"after","callId":"fixture@14","endTime":4691.265,"attachments":[]}
+{"type":"after","callId":"hook@12","endTime":4958.6720000000005,"attachments":[]}
+{"type":"before","callId":"attach@15","startTime":5142.899,"class":"Test","method":"attach","apiName":"attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@15","endTime":5143.058,"attachments":[]}
