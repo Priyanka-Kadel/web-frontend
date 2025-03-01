@@ -62,7 +62,7 @@ const Register = () => {
           <img src="/images/logo.png" alt="GoGear Icon" className="w-24 h-24 transform hover:scale-110 transition" />
         </div>
 
-        <h2 className="text-4xl font-extrabold text-white text-center">Join GoGear</h2>
+        <h2 className="text-2xl font-extrabold text-white text-center">Join GoGear</h2>
         <p className="text-gray-200 text-center mb-6">Create an account and start renting gears now!</p>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
