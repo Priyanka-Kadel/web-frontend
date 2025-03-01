@@ -31,7 +31,7 @@ const Login = () => {
           <img src="/images/logo.png" alt="GoGear Icon" className="w-24 h-24 transform hover:scale-110 transition" />
         </div>
 
-        <h2 className="text-2xl font-extrabold text-white text-center">Get Started!</h2>
+        <h2 className="text-4xl font-extrabold text-white text-center">Get Started!</h2>
         <p className="text-gray-200 text-center mb-6">Sign in to continue exploring gears.</p>
 
         <form className="space-y-6" onSubmit={handleLogin}>
